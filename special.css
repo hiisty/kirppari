@@ -5,7 +5,8 @@ background:#000000 url(fade.png) top center repeat-x;
 }
 
 .main {
-position: absolute; top: 0px; left: 30px;
+margin-left: auto; margin-right: auto;
+/*position: absolute; top: 0px; left: 30px;*/
 height: 729px;
 width: 802px;
 border: 1px solid red;
@@ -56,7 +57,7 @@ z-index: 1;
 }
 .flash {
 background-color: white;
-position: absolute; top: 75px; left: 0px;
+margin-left: auto; margin-right: auto; margin-top: 54px; 
 height: 50px;
 width: 640px;
 }
