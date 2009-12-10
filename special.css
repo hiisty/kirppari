@@ -1,15 +1,16 @@
 body {
 margin:0 auto;
 padding:0px 0px 0px 0px;
-background:#000000 url(fade.png) top center repeat-x;
+background:#665d51;
+#A85AF4;
 }
 
 .main {
 margin-left: auto; margin-right: auto;
 /*position: absolute; top: 0px; left: 30px;*/
-height: 729px;
-width: 802px;
-border: 1px solid red;
+height: 823px;
+width: 980px;
+border: 0px solid red;
 z-index: 1;
 }
 
@@ -21,9 +22,10 @@ background-repeat: no-repeat;
 background-attachment: scroll;
 background-position: top center;
 */
+background: url(images/banner_v1.png);
 float: left;
-height: 125px;
-width: 640px;
+height: 223px;
+width: 980px;
 border: 0px solid red;
 overflow: auto;
 z-index: 1;
@@ -33,7 +35,7 @@ z-index: 1;
 float: left;
 top: 150px;
 height: 600px;
-width: 640px;
+width: 780px;
 border: 0px solid red;
 }
 
@@ -48,15 +50,15 @@ div.content p
 background-color: white;
 background:#000000 url(fade.png) top center repeat-x;
 
-float: right;
-height: 727px;
-width: 160px;
-border: 1px solid red;
+float: left;
+height: 600px;
+width: 200px;
+border: 0px solid red;
 overflow: auto;
 z-index: 1;
 }
 .flash {
-background-color: white;
+#background-color: white;
 margin-left: auto; margin-right: auto; margin-top: 54px; 
 height: 50px;
 width: 640px;
