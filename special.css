@@ -1,14 +1,15 @@
 body {
 margin:0 auto;
 padding:0px 0px 0px 0px;
-background:#665d51;
+background: #9bd266;
+#665d51;
 #A85AF4;
 }
 
 .main {
 margin-left: auto; margin-right: auto;
 /*position: absolute; top: 0px; left: 30px;*/
-height: 823px;
+height: 780px;
 width: 980px;
 border: 0px solid red;
 z-index: 1;
@@ -22,9 +23,9 @@ background-repeat: no-repeat;
 background-attachment: scroll;
 background-position: top center;
 */
-background: url(images/banner_v1.png);
+background: url(images/kirppisbanner_v2.png);
 float: left;
-height: 223px;
+height: 280px;
 width: 980px;
 border: 0px solid red;
 overflow: auto;
@@ -34,16 +35,19 @@ z-index: 1;
 .content {
 float: left;
 top: 150px;
-height: 600px;
-width: 780px;
-border: 0px solid red;
+height: 496px;
+width: 776px;
+text-color: #000000;
+background: #ffffff;
+border: 2px solid #A20B3E;
+padding: 2px solid #000000;
 }
 
 div.content p
   {
   margin: 30px 40px;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   }
 
 .sidebar {
@@ -51,7 +55,7 @@ background-color: white;
 background:#000000 url(fade.png) top center repeat-x;
 
 float: left;
-height: 600px;
+height: 500px;
 width: 200px;
 border: 0px solid red;
 overflow: auto;
