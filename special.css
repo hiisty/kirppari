@@ -65,7 +65,7 @@ z-index: 1;
 
 div.sidebar img
  {
-		 padding: 10px;
+		 padding: 10px 10px 0px 10px;
  }
 .flash {
 #background-color: white;
