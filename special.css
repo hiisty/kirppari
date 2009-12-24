@@ -1,3 +1,4 @@
+
 body {
 margin:0 auto;
 padding:0px 0px 0px 0px;
@@ -52,21 +53,30 @@ div.content p
   }
 
 .sidebar {
-background-color: white;
-background:#000000 url(fade.png) top center repeat-x;
+#background-color: white;
+background: url(fade.jpg); 
+#top center repeat-x;
 
 float: left;
 height: 500px;
 width: 200px;
 border: 0px solid red;
 overflow: auto;
-z-index: 1;
+#z-index: -1;
 }
 
 div.sidebar img
  {
-		 padding: 10px 10px 0px 10px;
+		margin: 10px 10px 0px 10px; 
+		#padding: 10px 10px 0px 10px;
  }
+
+div.sidebar a img
+{
+		border: none;
+		/*behavior: url(iepngfix.htc);*/
+}
+
 .flash {
 #background-color: white;
 margin-left: auto; margin-right: auto; margin-top: 54px; 

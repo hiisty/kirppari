@@ -22,7 +22,7 @@ function print_navi()
 {
 		$content = '
 				<div class="sidebar">
-                    <img src=sijainti.png />
+                    <a href="?page=foo"><img src=sijainti.png /></a>
                     <img src=hinnasto.png />                
                     <img src=kuvia.png />                    
                     <img src=muuta.png /> 
