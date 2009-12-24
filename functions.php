@@ -21,7 +21,15 @@ function print_header()
 function print_navi()
 {
 		$content = '
-				<div class="sidebar"></div>
+				<div class="sidebar">
+                    <img src=sijainti.png />
+                    <img src=hinnasto.png />                
+                    <img src=kuvia.png />                    
+                    <img src=muuta.png /> 
+                
+                
+                
+                </div>
 				';
 
 		return $content;
