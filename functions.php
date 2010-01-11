@@ -9,31 +9,24 @@ function print_header()
 						<HEAD>
 								<LINK href="special.css" rel="stylesheet" type="text/css">
 								<script language="Javascript">
-								<!--
-//Slide Show script (this notice must stay intact)
-//For this and more scripts
-//visit java-scripts.net or http://wsabstract.com
 								if (document.images) {
-										img0_on =new Image();  img0_on.src ="videosactive.png"; 
-										img0_off=new Image();  img0_off.src="videos.png"; 
-
 										img1_on =new Image(); img1_on.src ="sijaintiB.png"; 
 										img1_off=new Image(); img1_off.src="sijainti.png"; 
 
-										img2_on =new Image(); img2_on.src ="newsactive.png"; 
-										img2_off=new Image(); img2_off.src="news.png"; 
+										img2_on =new Image(); img2_on.src ="hinnastoB.png"; 
+										img2_off=new Image(); img2_off.src="hinnasto.png"; 
 
-										img3_on =new Image(); img3_on.src ="makeownstoryactive.png"; 
-										img3_off=new Image(); img3_off.src="makeownstory.png"; 
+										img3_on =new Image(); img3_on.src ="kuviaB.png"; 
+										img3_off=new Image(); img3_off.src="kuvia.png"; 
 
-										img4_on =new Image(); img4_on.src ="uploadvideoactive.png"; 
-										img4_off=new Image(); img4_off.src="uploadvideo.png"; 
+										img4_on =new Image(); img4_on.src ="muutaB.png"; 
+										img4_off=new Image(); img4_off.src="muuta.png"; 
 
 										img5_on =new Image(); img5_on.src ="workgroupactive.png"; 
 										img5_off=new Image(); img5_off.src="workgroup.png"; 
 
 								}
-							  function movr(k) {
+                                function movr(k) {
 										if (document.images) 
 												eval("document.img"+k+".src=img"+k+"_on.src");
 								}
@@ -44,7 +37,6 @@ function print_header()
 								}
 
 
-//-->
 </script>
 
 	
@@ -61,28 +53,66 @@ function print_header()
 
 function print_navi()
 {
+if (!isset($_GET['page']))
+{
+    $_GET['page'] = "sijainti";
+}
 		$content = '
-				<div class="sidebar">
-
-                                <a href="?page=foo"
-                                onMouseOver="movr(1);return true;" 
-                                onMouseOut="mout(1);return true;" 
-                                onClick="return true;"
-                                ><img name=img1
-																alt="Sijainti"
-                                src="sijainti.png"
-                                ></a>
-
-
-
-                    <img src=hinnasto.png />                
-                    <img src=kuvia.png />                    
-                    <img src=muuta.png /> 
-                
-                
-                
-                </div>
-				';
+				<div class="sidebar">';
+                    if ($_GET['page']!="sijainti" )
+                    {
+                        $content .='
+                            <a href="?page=sijainti"
+                            onMouseOver="movr(1);return true;" 
+                            onMouseOut="mout(1);return true;" 
+                            onClick="return true;"
+                            ><img name=img1 border=0 
+                            src="sijainti.png"
+                            ></a>';
+                    }else{
+                        $content .= '<img src="sijaintiB.png">';
+                    }
+                    
+                    if ($_GET['page']!="hinnasto" )
+                    {
+                        $content .='
+                            <a href="?page=hinnasto"
+                            onMouseOver="movr(2);return true;" 
+                            onMouseOut="mout(2);return true;" 
+                            onClick="return true;"
+                            ><img name=img2 border=0 
+                            src="hinnasto.png"
+                            ></a>';
+                    }else{
+                        $content .= '<img src="hinnastoB.png">';
+                    }
+                     if ($_GET['page']!="kuvia" )
+                    {
+                        $content .='
+                            <a href="?page=kuvia"
+                            onMouseOver="movr(3);return true;" 
+                            onMouseOut="mout(3);return true;" 
+                            onClick="return true;"
+                            ><img name=img3 border=0 
+                            src="kuvia.png"
+                            ></a>';
+                    }else{
+                        $content .= '<img src="kuviaB.png">';
+                    }
+                     if ($_GET['page']!="muuta" )
+                    {
+                        $content .='
+                            <a href="?page=muuta"
+                            onMouseOver="movr(4);return true;" 
+                            onMouseOut="mout(4);return true;" 
+                            onClick="return true;"
+                            ><img name=img4 border=0 
+                            src="muuta.png"
+                            ></a>';
+                    }else{
+                        $content .= '<img src="muutaB.png">';
+                    }
+                     $content .='</div>';
 
 		return $content;
 }
