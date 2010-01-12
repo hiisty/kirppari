@@ -37,13 +37,28 @@ function print_header()
 								}
 
 
-</script>
+                                </script>
+                                <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAI5vcbkEsKgjJjNunqRKeZRRFqipORoJy7Keg7hfMglEC0KtY8hQWUwhKwhJAzgwNKzZz8xkhop4SmA" type="text/javascript"></script>
+
+                                <script type="text/javascript">
+
+                                function initialize() {
+                                          if (GBrowserIsCompatible()) {
+                                                var map = new GMap2(document.getElementById("map_canvas"));
+                                                map.setCenter(new GLatLng(60.867489, 23.519104), 13);
+                                                map.setUIToDefault();
+                                          }
+                                }
+                                                                            
+
+                                </script>
 
 	
 								
 								<TITLE>Talli Kirppis</TITLE>
 						</HEAD>
 						<BODY>
+                                <body onload="initialize()" onunload="GUnload()">
 								<div class="main">
 								<div class="header">
 										<!---<div class="flash"></div>-->
@@ -121,9 +136,9 @@ function print_content($page)
 {
 		$content ='
 				<div class="content"><p>';
-		if ($page == "foo")
+		if ($page == "sijainti")
 		{
-				$content .= 'asdf';
+				$content .= '<div id="map_canvas" style="width: 500px; height: 300px"></div>';
 		}
 		$content .='
 				</p>
