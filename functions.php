@@ -63,7 +63,12 @@ function print_header()
                                                                             
 
                                 </script>
-
+								<link href="galleria.css" rel="stylesheet" type="text/css" media="screen"> 
+								<script type="text/javascript" src="jquery-1.3.2.js"></script> 
+								<script type="text/javascript" src="jquery.galleria.js"></script> 
+								<script type="text/javascript"> 
+										jQuery(function($) { $("ul.gallery").galleria(); }); 
+								</script>
 	
 								
 								<TITLE>Talli Kirppis</TITLE>
@@ -150,6 +155,16 @@ function print_content($page)
 		if ($page == "sijainti")
 		{
 				$content .= '<div id="map_canvas" style="width: 300px; height: 300px"></div>';
+		}
+		if ($page == 'kuvia')
+		{
+				$content .= '<ul class="gallery"> 
+				<li><img src="images/kirppari/PB140032.JPG" title="A caption" alt="Image01"></li>
+				<li><img src="images/kirppari/PB140033.JPG" title="A caption" alt="Image01"></li>
+
+
+
+				</ul>';
 		}
 		$content .='
 				</p>
