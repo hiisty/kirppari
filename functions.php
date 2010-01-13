@@ -8,7 +8,7 @@ function print_header()
 				<HTML>
 						<HEAD>
 								<LINK href="special.css" rel="stylesheet" type="text/css">
-								<script language="Javascript">
+								<script type="text/javascript">
 								if (document.images) {
 										img1_on =new Image(); img1_on.src ="sijaintiB.png"; 
 										img1_off=new Image(); img1_off.src="sijainti.png"; 
@@ -48,7 +48,7 @@ function print_header()
                                                 map.setCenter(new GLatLng(60.867489, 23.519104), 13);
                                                 map.setUIToDefault();
                                                 var blueIcon = new GIcon(G_DEFAULT_ICON);
-                                                blueIcon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|2";
+                                                blueIcon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000";
                                                 
                                                 var point = new GLatLng(60.867489, 23.519104);
 
@@ -73,8 +73,7 @@ function print_header()
 								
 								<TITLE>Talli Kirppis</TITLE>
 						</HEAD>
-						<BODY>
-                                <body onload="initialize()" onunload="GUnload()">
+						<BODY onload="initialize()" onunload="GUnload()">
 								<div class="main">
 								<div class="header">
 										<!---<div class="flash"></div>-->
@@ -97,11 +96,11 @@ if (!isset($_GET['page']))
                             onMouseOver="movr(1);return true;" 
                             onMouseOut="mout(1);return true;" 
                             onClick="return true;"
-                            ><img name=img1 border=0 
+                            ><img name=img1 
                             src="sijainti.png"
-                            ></a>';
+                             alt=""></a>';
                     }else{
-                        $content .= '<img src="sijaintiB.png">';
+                        $content .= '<img src="sijaintiB.png" alt="">';
                     }
                     
                     if ($_GET['page']!="hinnasto" )
@@ -111,11 +110,11 @@ if (!isset($_GET['page']))
                             onMouseOver="movr(2);return true;" 
                             onMouseOut="mout(2);return true;" 
                             onClick="return true;"
-                            ><img name=img2 border=0 
+                            ><img name=img2  
                             src="hinnasto.png"
-                            ></a>';
+                             alt=""></a>';
                     }else{
-                        $content .= '<img src="hinnastoB.png">';
+                        $content .= '<img src="hinnastoB.png" alt="">';
                     }
                      if ($_GET['page']!="kuvia" )
                     {
@@ -124,11 +123,11 @@ if (!isset($_GET['page']))
                             onMouseOver="movr(3);return true;" 
                             onMouseOut="mout(3);return true;" 
                             onClick="return true;"
-                            ><img name=img3 border=0 
+                            ><img name=img3
                             src="kuvia.png"
-                            ></a>';
+                             alt=""></a>';
                     }else{
-                        $content .= '<img src="kuviaB.png">';
+                        $content .= '<img src="kuviaB.png" alt="">';
                     }
                      if ($_GET['page']!="muuta" )
                     {
@@ -137,11 +136,11 @@ if (!isset($_GET['page']))
                             onMouseOver="movr(4);return true;" 
                             onMouseOut="mout(4);return true;" 
                             onClick="return true;"
-                            ><img name=img4 border=0 
+                            ><img name=img4
                             src="muuta.png"
-                            ></a>';
+                             alt=""></a>';
                     }else{
-                        $content .= '<img src="muutaB.png">';
+                        $content .= '<img src="muutaB.png" alt="">';
                     }
                      $content .='</div>';
 
@@ -151,7 +150,7 @@ if (!isset($_GET['page']))
 function print_content($page)
 {
 		$content ='
-				<div class="content"><p>';
+				<div class="content">';
 		if ($page == "sijainti")
 		{
 				$content .= '<div id="map_canvas" style="width: 300px; height: 300px"></div>';
@@ -167,7 +166,7 @@ function print_content($page)
 				</ul>';
 		}
 		$content .='
-				</p>
+				
 				</div>';
 		return $content;
 
