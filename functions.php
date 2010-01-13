@@ -47,6 +47,17 @@ function print_header()
                                                 var map = new GMap2(document.getElementById("map_canvas"));
                                                 map.setCenter(new GLatLng(60.867489, 23.519104), 13);
                                                 map.setUIToDefault();
+                                                var blueIcon = new GIcon(G_DEFAULT_ICON);
+                                                blueIcon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|2";
+                                                
+                                                var point = new GLatLng(60.867489, 23.519104);
+
+
+
+                                                markerOptions = { icon:blueIcon };
+                                                map.addOverlay(new GMarker(point , markerOptions));
+
+                                          
                                           }
                                 }
                                                                             
@@ -138,7 +149,7 @@ function print_content($page)
 				<div class="content"><p>';
 		if ($page == "sijainti")
 		{
-				$content .= '<div id="map_canvas" style="width: 500px; height: 300px"></div>';
+				$content .= '<div id="map_canvas" style="width: 300px; height: 300px"></div>';
 		}
 		$content .='
 				</p>
