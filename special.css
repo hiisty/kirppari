@@ -47,8 +47,13 @@ z-index: 1;
 
 div#map_canvas {
 margin-left: auto; margin-right: auto;
+border: 1px solid;
+}
 
-
+.highslide-gallery
+{
+		width: 565px;
+		margin: auto;
 }
 
 
@@ -71,6 +76,12 @@ border: 0px solid red;
 overflow: auto;
 #z-index: -1;
 }
+
+div.sidebar img
+{  border-style: none;
+
+}
+
 
 div.sidebar img
  {

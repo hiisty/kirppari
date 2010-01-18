@@ -3,13 +3,15 @@
 function print_header()
 {
 		$content = '
-				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 				"http://www.w3.org/TR/html4/strict.dtd">
 				<HTML>
 						<HEAD>
+                        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" >
 								<LINK href="special.css" rel="stylesheet" type="text/css">
-								<script type="text/javascript">
-								if (document.images) {
+								<LINK href="galleria.css" rel="stylesheet" type="text/css" media="screen"> 
+                                <script type="text/javascript">
+                                    if (document.images) {
 										img1_on =new Image(); img1_on.src ="sijaintiB.png"; 
 										img1_off=new Image(); img1_off.src="sijainti.png"; 
 
@@ -25,24 +27,24 @@ function print_header()
 										img5_on =new Image(); img5_on.src ="workgroupactive.png"; 
 										img5_off=new Image(); img5_off.src="workgroup.png"; 
 
-								}
-                                function movr(k) {
+                                    }
+                                    function movr(k) 
+                                    {
 										if (document.images) 
 												eval("document.img"+k+".src=img"+k+"_on.src");
-								}
+                                    }
 
-								function mout(k) {
+                                    function mout(k) 
+                                    {
 										if (document.images) 
 												eval("document.img"+k+".src=img"+k+"_off.src");
-								}
-
-
+                                    }
                                 </script>
                                 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAI5vcbkEsKgjJjNunqRKeZRRFqipORoJy7Keg7hfMglEC0KtY8hQWUwhKwhJAzgwNKzZz8xkhop4SmA" type="text/javascript"></script>
 
                                 <script type="text/javascript">
 
-                                function initialize() {
+                                    function initialize() {
                                           if (GBrowserIsCompatible()) {
                                                 var map = new GMap2(document.getElementById("map_canvas"));
                                                 map.setCenter(new GLatLng(60.867489, 23.519104), 13);
@@ -58,17 +60,18 @@ function print_header()
                                                 map.addOverlay(new GMarker(point , markerOptions));
 
                                           
-                                          }
-                                }
-                                                                            
-
+                                        }
+                                    }
                                 </script>
-								<link href="galleria.css" rel="stylesheet" type="text/css" media="screen"> 
-								<script type="text/javascript" src="jquery-1.3.2.js"></script> 
-								<script type="text/javascript" src="jquery.galleria.js"></script> 
-								<script type="text/javascript"> 
-										jQuery(function($) { $("ul.gallery").galleria(); }); 
-								</script>
+
+<script type="text/javascript" src="highslide/highslide-with-gallery.js"></script>
+<script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
+<![endif]-->
+
+
 	
 								
 								<TITLE>Talli Kirppis</TITLE>
@@ -153,17 +156,30 @@ function print_content($page)
 				<div class="content">';
 		if ($page == "sijainti")
 		{
-				$content .= '<div id="map_canvas" style="width: 300px; height: 300px"></div>';
+				$content .='<p><h3>Sijainti</h3></p>
+                
+                <div id="map_canvas" style="width: 301px; height: 300px"></div>';
 		}
 		if ($page == 'kuvia')
 		{
-				$content .= '<ul class="gallery"> 
-				<li><img src="images/kirppari/PB140032.JPG" title="A caption" alt="Image01"></li>
-				<li><img src="images/kirppari/PB140033.JPG" title="A caption" alt="Image01"></li>
-
-
-
-				</ul>';
+				$content .= '
+                           <div class="highslide-gallery">
+        <ul>';
+        for ($i=1; $i<=18; $i++)
+        {
+            $content .='
+            <li>
+                <a href="images/kirppari/'.$i.'.JPG" class="highslide" 
+                    title="Kuva '.$i.'" 
+                    onclick="return hs.expand(this, config1 )">
+                    <img src="images/kirppari/'.$i.'t.JPG"  alt=""/>
+                </a>
+            </li>';
+        }
+        $content .='
+	</ul>
+	<div style="clear:both"></div></div> 
+';
 		}
 		$content .='
 				
