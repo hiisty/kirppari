@@ -47,7 +47,7 @@ function print_header()
                                     function initialize() {
                                           if (GBrowserIsCompatible()) {
                                                 var map = new GMap2(document.getElementById("map_canvas"));
-                                                map.setCenter(new GLatLng(60.867489, 23.519104), 13);
+                                                map.setCenter(new GLatLng(60.867489, 23.51), 13);
                                                 map.setUIToDefault();
                                                 var blueIcon = new GIcon(G_DEFAULT_ICON);
                                                 blueIcon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000";
@@ -66,9 +66,9 @@ function print_header()
 
 <script type="text/javascript" src="highslide/highslide-with-gallery.js"></script>
 <script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css">
 <!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
+<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css">
 <![endif]-->
 
 
@@ -156,9 +156,14 @@ function print_content($page)
 				<div class="content">';
 		if ($page == "sijainti")
 		{
-				$content .='<p><h3>Sijainti</h3></p>
+				$content .='<h3>Sijainti</h3>
+                <p>Forssasta valtatie kahta tullessa, heti varalaskualueen loputtua käännytään oikealle.<p><b>Bongaa <red>KIRPPIS</red>-Kyltti!</b></p>
                 
-                <div id="map_canvas" style="width: 301px; height: 300px"></div>';
+                <div id="map_canvas" style="width: 301px; height: 300px"></div>
+                <p>Yhteystiedot:<br>
+                Peltotie 95<br>
+                31620 Latovainio<br>
+                puh. 044 5050 311</p>';
 		}
 		if ($page == 'kuvia')
 		{
@@ -176,12 +181,34 @@ function print_content($page)
                 </a>
             </li>';
         }
+        
+
         $content .='
 	</ul>
 	<div style="clear:both"></div></div> 
 ';
 		}
-		$content .='
+		
+        if ($page == "hinnasto")
+        {
+            $content .='
+            <h3>Hinnasto</h3>
+            <table>
+            <tr>
+                <td><b>Perushinnat:</b></td>
+            </tr>
+            <tr>
+                <td>Pöytä viikoksi:</td>
+                <td>15€</td>
+            </tr>
+            <tr>
+                <td>Pöytä kuukaudeksi:</td>
+                <td>50€</td>
+            </tr>
+            </table>
+            ';
+        }
+        $content .='
 				
 				</div>';
 		return $content;

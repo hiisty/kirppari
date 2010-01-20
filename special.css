@@ -38,7 +38,7 @@ z-index: 1;
 		float: left;
 		top: 150px;
 		height: 496px;
-		width: 776px;
+		width: 774px;
 		text-color: #000000;
 		background: #ffffff;
 		border: 2px solid #A20B3E;
@@ -59,11 +59,15 @@ border: 1px solid;
 
 div.content p
   {
-  margin: 30px 40px;
+  margin: 5px 20px;
   #font-weight: bold;
   color: #000000;
   }
+div.content h3
+{
+		margin: 15px 40px;
 
+}
 .sidebar {
 #background-color: white;
 background: url(fade.jpg); 
@@ -71,12 +75,16 @@ background: url(fade.jpg);
 
 float: left;
 height: 500px;
-width: 200px;
+width: 202px;
 border: 0px solid red;
 overflow: auto;
 #z-index: -1;
 }
-
+div.content red
+{
+		color: #FF0000;
+		font-weight: bold;
+}
 div.sidebar img
 {  border-style: none;
 
